@@ -1,4 +1,4 @@
-angular.module('co.tython.beacon.demo.monitoring')
+angular.module('co.tython.salesforce.beacon.demo.monitoring')
 
 	.controller('MonitoringCtrl', ['$log', '$rootScope', '$scope', '$window', '$localForage', function ($log, $rootScope, $scope, $window, $localForage) {
 

@@ -1,12 +1,12 @@
-angular.module('co.tython.beacon.demo', [
+angular.module('co.tython.salesforce.beacon.demo', [
 	'ionic',
-	'co.tython.beacon.demo.home',
-	'co.tython.beacon.demo.ranging',
-	'co.tython.beacon.demo.monitoring',
-	'co.tython.beacon.demo.eventlog'
+	'co.tython.salesforce.beacon.demo.home',
+	'co.tython.salesforce.beacon.demo.ranging',
+	'co.tython.salesforce.beacon.demo.monitoring',
+	'co.tython.salesforce.beacon.demo.eventlog'
 ]).config(function ($stateProvider, $urlRouterProvider) {
 
-	window.console.debug('Configuring co.tython.beacon.demo');
+	window.console.debug('Configuring co.tython.salesforce.beacon.demo');
 
 	$stateProvider
 		.state('home', {
@@ -53,7 +53,7 @@ angular.module('co.tython.beacon.demo', [
 
 }).run(function () {
 
-	console.debug('Running co.tython.beacon.demo');
+	console.debug('Running co.tython.salesforce.beacon.demo');
 
 	if (window.cordova && window.cordova.plugins.Keyboard) {
 		cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -67,5 +67,5 @@ angular.module('co.tython.beacon.demo', [
 });
 
 window.ionic.Platform.ready(function () {
-	angular.bootstrap(document, ['co.tython.beacon.demo']);
+	angular.bootstrap(document, ['co.tython.salesforce.beacon.demo']);
 });

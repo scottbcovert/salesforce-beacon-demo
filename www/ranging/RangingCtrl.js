@@ -1,4 +1,4 @@
-angular.module('co.tython.beacon.demo.ranging')
+angular.module('co.tython.salesforce.beacon.demo.ranging')
 
 	.controller('RangingCtrl', ['$log', '$rootScope', '$scope', '$window', '$localForage', function ($log, $rootScope, $scope, $window, $localForage) {
 

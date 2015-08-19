@@ -1,4 +1,4 @@
-angular.module('co.tython.beacon.demo.home').controller('HomeCtrl', ['$http', '$ionicPopup', '$log', '$scope', '$localForage', function ($http, $ionicPopup, $log, $scope, $localForage) {
+angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', ['$http', '$ionicPopup', '$log', '$scope', '$localForage', function ($http, $ionicPopup, $log, $scope, $localForage) {
 
 	$log.debug('HomeCtrl is loaded.');
 

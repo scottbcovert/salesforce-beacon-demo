@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="co.tython.beacon.demo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets">
-    <name>Beacon Demo</name>
+<widget id="co.tython.salesforce.beacon.demo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets">
+    <name>Salesforce Beacon Demo</name>
     <description>
-          A demo app that interacts with Estimote beacons through ranging and/or region monitoring
+          A demo app that interacts with Salesforce and Estimote beacons through region monitoring
     </description>
     <author email="scott.covert@tython.co" href="http://www.tython.co/">
       Scott Covert
