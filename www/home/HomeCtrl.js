@@ -7,32 +7,53 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 
 	var restUrl = 'https://beacondemo-developer-edition.na34.force.com/services/apexrest/locationOpps/v1.0.0';
 	var contactId = '003610000029IRn';
+	var regionEntered;
+	var regionExited;
 	var proximityImmediate;
+
+	var alertPopup = function(elem){
+		$ionicPopup.alert({
+		    title: elem.Name,
+		    template: elem.Description
+		});
+	}
+
+	var callout = function(){
+		$http.get(restUrl + '?contactId=' + contactId)
+			.then(function(response)
+			{
+				if (response){
+					alertPopup(response.data)
+						.then(function(res){
+							// Closed
+						});
+				}
+			});
+	}
 
 	$scope.updateMonitoringEvent = function () {
 
 		$log.debug('updateMonitoringEvent()');
 
-		$http.get(restUrl + '?contactId=' + contactId)
-			.then(function(response)
-			{
-				$localForage.getItem('monitoring_events').then(function (monitoringEvents) {
-					if (monitoringEvents[monitoringEvents.length-1].state === 'CLRegionStateInside'){
-						$scope.event = 'In range!';
-						$scope.icon = 'ion-eye';
-						if (response){
-							$ionicPopup.alert({
-							    title: response.Name,
-							    template: response.Description
-							});
-						}
-					}
-					else {
-						$scope.event = 'Out of range :-(';
-							$scope.icon = 'ion-eye-disabled';
-					}
-				});		
-			});
+		$localForage.getItem('monitoring_events').then(function (monitoringEvents) {
+			
+			if (monitoringEvents[monitoringEvents.length-1].state === 'CLRegionStateInside'){
+				if (!regionEntered){
+					callout();
+				}
+				$scope.event = 'In range!';
+				$scope.icon = 'ion-eye';	
+				regionEntered = true;					
+			}
+			else {
+				if (!regionExited){
+					callout();
+				}
+				$scope.event = 'Out of range :-(';
+				$scope.icon = 'ion-eye-disabled';
+				regionExited = true;
+			}
+		});
 		
 	};
 
@@ -45,18 +66,9 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 			if ($scope.event === 'ProximityImmediate'){
 				$scope.icon = 'ion-volume-high';
 				if (!proximityImmediate){
-					proximityImmediate = true;
-					$http.get(restUrl + '?contactId=' + contactId)
-						.then(function(response)
-						{
-							if (response){
-								$ionicPopup.alert({
-								    title: response.Name,
-								    template: response.Description
-								});			
-							}
-						});							
+					callout();	
 				}
+				proximityImmediate = true;
 			}
 			else if ($scope.event === 'ProximityNear'){
 				$scope.icon = 'ion-volume-medium';
