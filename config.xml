@@ -1,13 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.unarin.cordova.proximity.quickstart" version="1.0.1" xmlns="http://www.w3.org/ns/widgets">
-    <name>Cordova Proximity Quickstart</name>
+    <name>Beacon Demo</name>
     <description>
-        An Ionic Framework and Cordova project demonstrating proximity tasks.
+          A demo app that interacts with Estimote beacons through ranging and/or region monitoring
     </description>
-    <author email="peter.metz@unarin.com" href="http://unarin.com/">
-        Peter Metz
+    <author email="scott.covert@tython.co" href="http://www.tython.co/">
+      Scott Covert
     </author>
-
+    <!-- This app is piggy-backed off of the great demo app created by Peter Metz named 'Cordova Proximity Quickstart' -->
+    <!--
+    <author email="peter.metz@unarin.com" href="http://unarin.com/">
+          Peter Metz
+    </author>
+    -->
+    
     <content src="index.html"/>
     <access origin="*"/>
     <preference name="webviewbounce" value="false"/>
