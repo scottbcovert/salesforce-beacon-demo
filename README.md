@@ -1,7 +1,7 @@
-Beacon Demo
+Salesforce Beacon Demo
 =====================
 
-A starting project for ranging/region monitoring with Estimote beacons.
+A starting project for using Salesforce data while region monitoring with Estimote beacons.
 
 This project was piggy-backed off the great [Cordova Proximity Plugin](https://github.com/petermetz/cordova-plugin-ibeacon) app built by Peter Metz.
 
