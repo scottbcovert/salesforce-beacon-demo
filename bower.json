@@ -1,5 +1,5 @@
 {
-  "name": "Cordova Proximity Quickstart",
+  "name": "Beacon Demo",
   "private": "false",
   "dependencies": {
     "ionic": "driftyco/ionic-bower#1.1.0",
