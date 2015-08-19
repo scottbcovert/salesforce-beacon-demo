@@ -21,7 +21,7 @@ second/third tab, or by modifying the default values in the source code (see the
 
 * [Create a Salesforce Developer Org](https://developer.salesforce.com/signup)
 
-* Import Salesforce Apex REST Service from [partner repository]()
+* Import Salesforce Apex REST Service from [partner repository](https://github.com/scottbcovert/salesforce-beacon-demo-apex)
 
 * [Setup Salesforce Apex REST Endpoint with Sites](http://www.wadewegner.com/2013/03/creating-anonymous-rest-apis-with-salesforce-com/)
 
