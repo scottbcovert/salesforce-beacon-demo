@@ -1,4 +1,4 @@
-angular.module('com.unarin.cordova.proximity.quickstart', [
+angular.module('co.tython.beacon.demo', [
 	'ionic',
 	'co.tython.beacon.demo.home',
 	'co.tython.beacon.demo.ranging',
