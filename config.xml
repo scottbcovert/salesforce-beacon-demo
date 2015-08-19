@@ -7,12 +7,6 @@
     <author email="scott.covert@tython.co" href="http://www.tython.co/">
       Scott Covert
     </author>
-    <!-- This app is piggy-backed off of the great demo app created by Peter Metz named 'Cordova Proximity Quickstart' -->
-    <!--
-    <author email="peter.metz@unarin.com" href="http://unarin.com/">
-          Peter Metz
-    </author>
-    -->
 
     <content src="index.html"/>
     <access origin="*"/>
