@@ -5,8 +5,10 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 	$scope.event = 'Waiting...';
 	$scope.icon = 'ion-ios-clock-outline';
 
-	var restUrl = 'https://beacondemo-developer-edition.na34.force.com/services/apexrest/locationOpps/v1.0.0';
-	var contactId = '003610000029IRn';
+	// Insert your custom REST Url here
+	var restUrl = '';
+	// Mock customer id using Salesforce contact id
+	var contactId = '';
 	var regionEntered;
 	var regionExited;
 	var proximityImmediate;

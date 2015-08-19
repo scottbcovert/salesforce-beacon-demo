@@ -19,6 +19,12 @@ second/third tab, or by modifying the default values in the source code (see the
 
 * [Buy estimotes](http://estimote.com/) :-)
 
+* [Create a Salesforce Developer Org](https://developer.salesforce.com/signup)
+
+* Import Salesforce Apex REST Service from [partner repository]()
+
+* [Setup Salesforce Apex REST Endpoint with Sites](http://www.wadewegner.com/2013/03/creating-anonymous-rest-apis-with-salesforce-com/)
+
 * Install node and npm.
 
     ```
@@ -39,6 +45,8 @@ second/third tab, or by modifying the default values in the source code (see the
 
 After a clean checkout, make sure to add one or all of the supported platforms and the plugin itself before running.
     
+    # Setup proper custom REST endpoint and create a mock customer using the id of a Salesforce contact that relates to an opportunity in HomeCtrl.js
+
     # Install NPM dependencies
     npm install
     
