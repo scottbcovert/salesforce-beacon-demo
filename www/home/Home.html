@@ -3,19 +3,14 @@
 </ion-header-bar>
 
 <ion-view ng-controller="HomeCtrl">
-    <ion-content class="has-header padding">
+    <ion-content class="has-header padding center large">
 
-
-        <ion-scroll zooming="false" direction="y">
-
-            <ion-list>
-                <ion-item>
-                    <span>{{event}}</span>
-                </ion-item>
-            </ion-list>
-
-        </ion-scroll>
-
+            <ion-item>
+                <span>{{event}}</span>
+            </ion-item>
+            <ion-item>
+                <span class="{{icon}} center"></span>
+            </ion-item>
 
     </ion-content>
 </ion-view>
