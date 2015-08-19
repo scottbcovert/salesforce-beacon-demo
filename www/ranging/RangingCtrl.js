@@ -13,9 +13,11 @@ angular.module('com.unarin.cordova.proximity.quickstart.ranging')
 
 		$scope.startRanging = function () {
 			$log.debug('startRanging()');
-
+			$window.cordova.plugins.locationManager.setDelegate(delegate);
 			var beaconRegion = cordova.plugins.locationManager.Regions.fromJson($scope.region);
 			$log.debug('Parsed BeaconRegion object:', JSON.stringify(beaconRegion, null, '\t'));
+
+			$window.cordova.plugins.locationManager.stopMonitoringForRegion(beaconRegion);
 
 			$window.cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
 				.fail($log.error)
@@ -39,22 +41,24 @@ angular.module('com.unarin.cordova.proximity.quickstart.ranging')
 					}
 
 					rangingEvents.push(pluginResult);
-
 					return rangingEvents;
-
 				}).then(function (rangingEvents) {
-					return $localForage.setItem('ranging_events', rangingEvents);
-				}).then(function () {
-					$rootScope.$broadcast('updated_ranging_events');
+					$localForage.setItem('ranging_events', rangingEvents);
+					
+					$rootScope.$broadcast('updated_ranging_events');					
 				});
+		};
+
+		delegate.didStopMonitoringForRegion = function (pluginResult) {
+			$log.debug('didStopMonitoringForRegion:', pluginResult);
+			$scope.updateRangedRegions();
 		};
 
 
 		//
 		// Init
 		//
-		$window.cordova.plugins.locationManager.requestAlwaysAuthorization();
-		$window.cordova.plugins.locationManager.setDelegate(delegate);
+		$window.cordova.plugins.locationManager.requestWhenInUseAuthorization();
 
 		$scope.region = {};
 

@@ -7,6 +7,37 @@ angular.module('com.unarin.cordova.proximity.quickstart', [
 
 	window.console.debug('Configuring com.unarin.cordova.proximity.quickstart');
 
+	$stateProvider
+		.state('ranging', {
+			url: '/ranging',
+			views: {
+			'ranging': {
+			templateUrl: 'ranging/Ranging.html',
+			controller: 'RangingCtrl'
+			}
+			}
+		})
+
+		.state('monitoring', {
+			url: '/monitoring',
+			views: {
+			'monitoring': {
+			templateUrl: 'monitoring/Monitoring.html',
+			controller: 'MonitoringCtrl'
+			}
+			}
+		})
+
+		.state('eventlog', {
+			url: '/eventlog',
+			views: {
+			'eventlog': {
+			templateUrl: 'eventlog/EventLog.html',
+			controller: 'EventLogCtrl'
+			}
+			}
+		})
+
 	$urlRouterProvider.otherwise('/eventlog');
 
 }).run(function () {

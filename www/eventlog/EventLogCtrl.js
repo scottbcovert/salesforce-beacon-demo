@@ -14,6 +14,7 @@ angular.module('com.unarin.cordova.proximity.quickstart.eventlog').controller('E
 	};
 
 	$scope.updateRangingEvents = function () {
+		
 		$log.debug('updateRangingEvents()');
 
 		$localForage.getItem('ranging_events').then(function (rangingEvents) {
@@ -21,13 +22,10 @@ angular.module('com.unarin.cordova.proximity.quickstart.eventlog').controller('E
 		});
 	};
 
-
-	//$scope.$on('updated_monitoring_events', $scope.updateEvents);
+	$log.debug('Subscribing for updates of ranging events.');
+	$scope.$on('updated_monitoring_events', $scope.updateEvents);
 
 	$log.debug('Subscribing for updates of ranging events.');
 	$scope.$on('updated_ranging_events', $scope.updateRangingEvents);
-
-	//$scope.updateEvents();
-
 
 }]);
