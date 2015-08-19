@@ -1,4 +1,4 @@
-angular.module('com.unarin.cordova.proximity.quickstart.eventlog').controller('EventLogCtrl', ['$log', '$scope', '$localForage', function ($log, $scope, $localForage) {
+angular.module('co.tython.beacon.demo.eventlog').controller('EventLogCtrl', ['$log', '$scope', '$localForage', function ($log, $scope, $localForage) {
 
 	$log.debug('EventLogCtrl is loaded.');
 

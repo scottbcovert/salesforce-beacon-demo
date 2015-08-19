@@ -1,4 +1,4 @@
-angular.module('com.unarin.cordova.proximity.quickstart.home').controller('HomeCtrl', ['$log', '$scope', '$localForage', function ($log, $scope, $localForage) {
+angular.module('co.tython.beacon.demo.home').controller('HomeCtrl', ['$log', '$scope', '$localForage', function ($log, $scope, $localForage) {
 
 	$log.debug('HomeCtrl is loaded.');
 

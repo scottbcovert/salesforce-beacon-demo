@@ -1,4 +1,4 @@
-angular.module('com.unarin.cordova.proximity.quickstart.monitoring')
+angular.module('co.tython.beacon.demo.monitoring')
 
 	.controller('MonitoringCtrl', ['$log', '$rootScope', '$scope', '$window', '$localForage', function ($log, $rootScope, $scope, $window, $localForage) {
 

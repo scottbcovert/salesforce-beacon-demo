@@ -1,4 +1,4 @@
-angular.module('com.unarin.cordova.proximity.quickstart.ranging')
+angular.module('co.tython.beacon.demo.ranging')
 
 	.controller('RangingCtrl', ['$log', '$rootScope', '$scope', '$window', '$localForage', function ($log, $rootScope, $scope, $window, $localForage) {
 

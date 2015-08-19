@@ -1,6 +1,6 @@
-angular.module('com.unarin.cordova.proximity.quickstart.home', []).config(function () {
+angular.module('co.tython.beacon.demo.home', []).config(function () {
 
-	console.debug('Configured com.unarin.cordova.proximity.quickstart.home successfully.');
+	console.debug('Configured co.tython.beacon.demo.home successfully.');
 
 
 });

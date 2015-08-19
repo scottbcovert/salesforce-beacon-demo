@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.unarin.cordova.proximity.quickstart" version="1.0.1" xmlns="http://www.w3.org/ns/widgets">
+<widget id="co.tython.beacon.demo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets">
     <name>Beacon Demo</name>
     <description>
           A demo app that interacts with Estimote beacons through ranging and/or region monitoring
@@ -13,7 +13,7 @@
           Peter Metz
     </author>
     -->
-    
+
     <content src="index.html"/>
     <access origin="*"/>
     <preference name="webviewbounce" value="false"/>

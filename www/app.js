@@ -1,12 +1,12 @@
 angular.module('com.unarin.cordova.proximity.quickstart', [
 	'ionic',
-	'com.unarin.cordova.proximity.quickstart.home',
-	'com.unarin.cordova.proximity.quickstart.ranging',
-	'com.unarin.cordova.proximity.quickstart.monitoring',
-	'com.unarin.cordova.proximity.quickstart.eventlog'
+	'co.tython.beacon.demo.home',
+	'co.tython.beacon.demo.ranging',
+	'co.tython.beacon.demo.monitoring',
+	'co.tython.beacon.demo.eventlog'
 ]).config(function ($stateProvider, $urlRouterProvider) {
 
-	window.console.debug('Configuring com.unarin.cordova.proximity.quickstart');
+	window.console.debug('Configuring co.tython.beacon.demo');
 
 	$stateProvider
 		.state('home', {
@@ -53,7 +53,7 @@ angular.module('com.unarin.cordova.proximity.quickstart', [
 
 }).run(function () {
 
-	console.debug('Running com.unarin.cordova.proximity.quickstart');
+	console.debug('Running co.tython.beacon.demo');
 
 	if (window.cordova && window.cordova.plugins.Keyboard) {
 		cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -67,5 +67,5 @@ angular.module('com.unarin.cordova.proximity.quickstart', [
 });
 
 window.ionic.Platform.ready(function () {
-	angular.bootstrap(document, ['com.unarin.cordova.proximity.quickstart']);
+	angular.bootstrap(document, ['co.tython.beacon.demo']);
 });

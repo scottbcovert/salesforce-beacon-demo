@@ -1,5 +1,5 @@
-angular.module('com.unarin.cordova.proximity.quickstart.ranging', []).config(function () {
+angular.module('co.tython.beacon.demo.ranging', []).config(function () {
 
-	console.debug('Configured com.unarin.cordova.proximity.quickstart.ranging successfully.');
+	console.debug('Configured co.tython.beacon.demo.ranging successfully.');
 
 });
