@@ -1,9 +1,23 @@
-angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', ['$http', '$ionicPopup', '$log', '$scope', '$localForage', function ($http, $ionicPopup, $log, $scope, $localForage) {
+angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', ['$http', '$ionicPopup', '$log', '$scope', '$localForage', '$cordovaLocalNotification', function ($http, $ionicPopup, $log, $scope, $localForage, $cordovaLocalNotification) {
 
 	$log.debug('HomeCtrl is loaded.');
 
 	$scope.event = 'Waiting...';
 	$scope.icon = 'ion-ios-clock-outline';
+
+	$scope.sendPush = function(pushMessage,pushTitle) {
+        var notificationTime = new Date();
+        $cordovaLocalNotification.add({
+            id: "1234",
+            date: notificationTime,
+            message: pushMessage,
+            title: pushTitle,
+            autoCancel: true,
+            sound: "file://sounds/beep.caf"
+        }).then(function () {
+            console.log("The notification has been set");
+        });
+    };
 
 	// Insert your custom REST Url here
 	var restUrl = '';
@@ -20,15 +34,21 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 		});
 	}
 
-	var callout = function(){
+	var callout = function(type){
 		$http.get(restUrl + '?contactId=' + contactId)
 			.then(function(response)
 			{
-				if (response){
+				if (response && type === 'popup'){
 					alertPopup(response.data)
 						.then(function(res){
 							// Closed
 						});
+				}
+				else if (response && type === 'entered'){
+					$scope.sendPush(response.data.Description,'Entered: ' + response.data.Name);
+				}
+				else if (response && type === 'exited'){
+					$scope.sendPush(response.data.Description,'Exited: ' + response.data.Name);
 				}
 			});
 	}
@@ -41,7 +61,7 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 			
 			if (monitoringEvents[monitoringEvents.length-1].state === 'CLRegionStateInside'){
 				if (!regionEntered){
-					callout();
+					callout('entered');
 				}
 				$scope.event = 'In range!';
 				$scope.icon = 'ion-eye';	
@@ -49,7 +69,7 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 			}
 			else {
 				if (!regionExited){
-					callout();
+					callout('exited');
 				}
 				$scope.event = 'Out of range :-(';
 				$scope.icon = 'ion-eye-disabled';
@@ -68,7 +88,7 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 			if ($scope.event === 'ProximityImmediate'){
 				$scope.icon = 'ion-volume-high';
 				if (!proximityImmediate){
-					callout();	
+					callout('popup');	
 				}
 				proximityImmediate = true;
 			}
