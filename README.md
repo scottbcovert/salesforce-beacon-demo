@@ -43,7 +43,7 @@ second/third tab, or by modifying the default values in the source code (see the
     
 ## Usage
 
-After a clean checkout, make sure to add one or all of the supported platforms and the plugin itself before running.
+After a clean checkout, you should update HomeCtrl.js with your own custom REST Url and a corresponding contact id from your Salesforce org that is tied to an open opportunity. You can also update the Ranging.html and Monitoring.html pages to automatically load with default values that match your estimotes.
     
     # Setup proper custom REST endpoint and create a mock customer using the id of a Salesforce contact that relates to an opportunity in HomeCtrl.js
 
