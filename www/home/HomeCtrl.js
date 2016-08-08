@@ -23,6 +23,7 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 	var restUrl = '';
 	// Mock customer id using Salesforce contact id
 	var contactId = '';
+	var regionInfo;
 	var regionEntered;
 	var regionExited;
 	var proximityImmediate;
@@ -34,8 +35,10 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 		});
 	}
 
-	var callout = function(type){
-		$http.get(restUrl + '?contactId=' + contactId)
+	var callout = function(type, region){
+		// Provide identifying info upon entering beacon region for tracking purposes
+		regionInfo = ( type === 'entered' && typeof region !== 'undefined') ? '&uuid=' + region.uuid + '&major=' + region.major + '&minor=' + region.minor + '&identifier=' + region.identifier + '&type=' + type : '';
+		$http.get(restUrl + '?contactId=' + contactId + regionInfo)
 			.then(function(response)
 			{
 				if (response && type === 'popup'){
@@ -61,7 +64,7 @@ angular.module('co.tython.salesforce.beacon.demo.home').controller('HomeCtrl', [
 			
 			if (monitoringEvents[monitoringEvents.length-1].state === 'CLRegionStateInside'){
 				if (!regionEntered){
-					callout('entered');
+					callout('entered', monitoringEvents[monitoringEvents.length-1].region);
 				}
 				$scope.event = 'In range!';
 				$scope.icon = 'ion-eye';	
