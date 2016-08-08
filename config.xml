@@ -22,4 +22,7 @@
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true"/>
     </feature>
+
+    <!-- Re-enable HTTP for iOS9 -->
+    <hook type="after_prepare" src="package-hooks/ios9_allow_http.sh" />
 </widget>
