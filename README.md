@@ -53,17 +53,8 @@ After a clean checkout, make sure to add one or all of the supported platforms a
     # Run the gulp install task which will run bower
     gulp install
     
-    # Add iOS as a platform to your project
-    ionic platform add ios 
-    
-    # Install the proximity plugin from GitHub
-    ionic plugin add https://github.com/petermetz/cordova-plugin-ibeacon.git
-
-    # Install the ionic push plugin from GitHub
-    ionic plugin add https://github.com/phonegap-build/PushPlugin.git
-
-    # Install the Cordova Local Notification plugin from GitHub
-    ionic plugin add https://github.com/katzer/cordova-plugin-local-notifications.git
+    # Restore ionic state to add iOS as a platform to your project and install plugin dependencies
+    ionic state restore
     
     # Build the iOS platform files
     ionic build ios
