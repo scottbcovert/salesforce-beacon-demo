@@ -1,6 +1,8 @@
 Salesforce Beacon Demo
 =====================
 
+**NOTE: This repository has been deprecated as its functionality has been merged into another [beacon demo repository](https://github.com/scottbcovert/beacon-demo)**
+
 A starting project for using Salesforce data while region monitoring with Estimote beacons.
 
 This project was piggy-backed off the great [Cordova Proximity Plugin](https://github.com/petermetz/cordova-plugin-ibeacon) app built by Peter Metz.
